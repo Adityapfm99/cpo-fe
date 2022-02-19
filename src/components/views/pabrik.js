@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Form from "../../utilities/Forms";
 
 
@@ -10,7 +10,7 @@ const Pabrik = () => {
   const [password, setPassword] = useState("");
   // const [confirmPassword, setPassword] = useState("");
   const [validate, setValidate] = useState({});
-  const [showPassword, setShowPassword] = useState(false);
+  const [setShowPassword] = useState(false);
 
   const validateRegister = () => {
     let isValid = true;
@@ -60,168 +60,169 @@ const Pabrik = () => {
       alert("Successfully Register User");
     }
   };
-
-  const togglePassword = (e) => {
-    if (showPassword) {
-      setShowPassword(false);
-    } else {
-      setShowPassword(true);
-    }
-  };
+  setShowPassword(false);
+  // const togglePassword = (e) => {
+  //   if (showPassword) {
+  //     setShowPassword(false);
+  //   } else {
+  //     setShowPassword(true);
+  //   }
+  // };
 
   return (
-    <div className="row g-0 auth-wrapper">
-      <div className="col-12 col-md-7 col-lg-6 auth-main-col text-center">
-        <div className="d-flex flex-column align-content-end">
-          <div className="auth-body mx-auto">
-            <h1>Buat akun</h1>
-            <div className="auth-form-container text-start">
-              <form
-                className="auth-form"
-                method="POST"
-                onSubmit={register}
-                autoComplete={"off"}
-              >
-                <div className="name mb-3">
-                  <input
-                    type="text"
-                    className={`form-control ${
-                      validate.validate && validate.validate.name
-                        ? "is-invalid "
-                        : ""
-                    }`}
-                    id="group"
-                    name="group"
-                    value={grup}
-                    placeholder="Group"
-                    onChange={(e) => setName(e.target.value)}
-                  />
-
-                  <div
-                    className={`invalid-feedback text-start ${
-                      validate.validate && validate.validate.name
-                        ? "d-block"
-                        : "d-none"
-                    }`}
-                  >
-                    {validate.validate && validate.validate.name
-                      ? validate.validate.name[0]
-                      : ""}
+    <div className="container">
+      <div className="row">
+        <div className="col-12">
+          <h1 style={{ marginTop: "2rem", marginLeft: "10px" }}>Tambah Pabrik</h1>
+        </div>
+      </div>
+      <div className="row" style={{ marginTop: "3rem", marginLeft: "10px" }}>
+        <div className="col-12">
+          <div className="auth-form-container text-start">
+            <form
+              className="auth-form"
+              method="POST"
+              onSubmit={register}
+              autoComplete={"off"}
+            >
+              <div className="mb-3">
+                <div className="row">
+                  <div className="col-2">
+                    <span>PT</span><span style={{ color: "red"  }}>*</span>
                   </div>
-                </div>
-
-                <div className="email mb-3">
-                  <input
-                    type="email"
-                    className={`form-control ${
-                      validate.validate && validate.validate.email
-                        ? "is-invalid "
-                        : ""
-                    }`}
-                    id="email"
-                    name="email"
-                    value={email}
-                    placeholder="Email"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-
-                  <div
-                    className={`invalid-feedback text-start ${
-                      validate.validate && validate.validate.email
-                        ? "d-block"
-                        : "d-none"
-                    }`}
-                  >
-                    {validate.validate && validate.validate.email
-                      ? validate.validate.email[0]
-                      : ""}
-                  </div>
-                </div>
-
-                <div className="password mb-3"> 
-                  <div className="input-group">
+                  <div className="col-6">
                     <input
-                      type={showPassword ? "text" : "password"}
-                      className={`form-control ${
-                        validate.validate && validate.validate.password
+                      type="text"
+                      className={`form-control ${validate.validate && validate.validate.name
                           ? "is-invalid "
                           : ""
-                      }`}
-                      name="password"
-                      id="password"
-                      value={password}
-                      placeholder="Password"
-                      onChange={(e) => setPassword(e.target.value)}
+                        }`}
+                      id="pt"
+                      name="pt"
+                      value={grup}
+                      placeholder="PT"
+                      onChange={(e) => setName(e.target.value)}
                     />
 
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary btn-sm"
-                      onClick={(e) => togglePassword(e)}
-                    >
-                      <i
-                        className={
-                          showPassword ? "far fa-eye" : "far fa-eye-slash"
-                        }
-                      ></i>{" "}
-                    </button>
-
                     <div
-                      className={`invalid-feedback text-start ${
-                        validate.validate && validate.validate.password
+                      className={`invalid-feedback text-start ${validate.validate && validate.validate.name
                           ? "d-block"
                           : "d-none"
-                      }`}
+                        }`}
                     >
-                      {validate.validate && validate.validate.password
-                        ? validate.validate.password[0]
+                      {validate.validate && validate.validate.name
+                        ? validate.validate.name[0]
                         : ""}
                     </div>
                   </div>
-                </div>
 
-                <div className="password mb-3"> 
-                  <div className="input-group">
+                </div>
+              </div>
+
+              <div className="mb-3">
+                <div className="row">
+                  <div className="col-2">
+                    <span>Pulau</span><span style={{ color: "red" }}>*</span>
+                  </div>
+                  <div className="col-6">
                     <input
-                      type={showPassword ? "text" : "password"}
-                      className={`form-control ${
-                        validate.validate && validate.validate.password
-                          ? "is-invalid "
-                          : ""
-                      }`}
-                      name="password"
-                      id="password"
-                      value={password}
-                      placeholder="Konfirmasi Pasword"
-                      onChange={(e) => setPassword(e.target.value)}
+                      type="text"
+                      className={`form-control ${validate.validate && validate.validate.name
+                        ? "is-invalid "
+                        : ""
+                        }`}
+                      id="pt"
+                      name="pt"
+                      value={grup}
+                      placeholder="Pulau"
+                      onChange={(e) => setName(e.target.value)}
                     />
 
-                    <button
-                      type="button"
-                      className="btn btn-outline-primary btn-sm"
-                      onClick={(e) => togglePassword(e)}
-                    >
-                      <i
-                        className={
-                          showPassword ? "far fa-eye" : "far fa-eye-slash"
-                        }
-                      ></i>{" "}
-                    </button>
-
                     <div
-                      className={`invalid-feedback text-start ${
-                        validate.validate && validate.validate.password
-                          ? "d-block"
-                          : "d-none"
-                      }`}
+                      className={`invalid-feedback text-start ${validate.validate && validate.validate.name
+                        ? "d-block"
+                        : "d-none"
+                        }`}
                     >
-                      {validate.validate && validate.validate.password
-                        ? validate.validate.password[0]
+                      {validate.validate && validate.validate.name
+                        ? validate.validate.name[0]
                         : ""}
                     </div>
                   </div>
-                </div>
 
+                </div>
+              </div>
+
+              <div className="mb-3">
+                <div className="row">
+                  <div className="col-2">
+                    <span>Pabrik</span><span style={{ color: "red" }}>*</span>
+                  </div>
+                  <div className="col-6">
+                    <input
+                      type="text"
+                      className={`form-control ${validate.validate && validate.validate.name
+                        ? "is-invalid "
+                        : ""
+                        }`}
+                      id="pt"
+                      name="pt"
+                      value={grup}
+                      placeholder="Pabrik"
+                      onChange={(e) => setName(e.target.value)}
+                    />
+
+                    <div
+                      className={`invalid-feedback text-start ${validate.validate && validate.validate.name
+                        ? "d-block"
+                        : "d-none"
+                        }`}
+                    >
+                      {validate.validate && validate.validate.name
+                        ? validate.validate.name[0]
+                        : ""}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div className="mb-3">
+                <div className="row">
+                  <div className="col-2">
+                    <span>Kapasitas(Ton/Jam)</span><span style={{ color: "red" }}>*</span>
+                  </div>
+                  <div className="col-6">
+                    <input
+                      type="text"
+                      className={`form-control ${validate.validate && validate.validate.name
+                        ? "is-invalid "
+                        : ""
+                        }`}
+                      id="pt"
+                      name="pt"
+                      value={grup}
+                      placeholder="Kapasitas(Ton/Jam)"
+                      onChange={(e) => setName(e.target.value)}
+                    />
+
+                    <div
+                      className={`invalid-feedback text-start ${validate.validate && validate.validate.name
+                        ? "d-block"
+                        : "d-none"
+                        }`}
+                    >
+                      {validate.validate && validate.validate.name
+                        ? validate.validate.name[0]
+                        : ""}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              
+              <div className="col-8" style={{ display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
                 <div className="text-center">
                   <button
                     type="submit"
@@ -230,21 +231,12 @@ const Pabrik = () => {
                     Save
                   </button>
                 </div>
-              </form>
-
-              <hr />
-              <div className="auth-option text-center pt-2">
-                Punya Akun?{" "}
-                <Link className="text-link" to="/login">
-                  Sign in
-                </Link>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-   
   );
 };
 

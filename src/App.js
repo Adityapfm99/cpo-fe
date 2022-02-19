@@ -3,44 +3,52 @@ import Login from "./components/views/Login";
 import Register from "./components/views/Register";
 import Forgot from "./components/views/Forgot";
 import Factory from "./components/views/pabrik";
-import FactoryData from "./components/views/dataPabrik";
+import DataIndustry from "./components/views/dataIndustry";
+import React, {useState} from 'react'
 
 import Header from "../src/header";
 import SideNavigation from "../src/components/sidebar/sidebar";
-// import { Col, Row } from "reactstrap";
-// import { useState } from "react";
+import { Col, Row } from "reactstrap";
+import DailyReport from "./components/views/dailyReport";
+import InputDailyReport from "./components/views/inputDailyReport";
 
 function App() {
-  // const [isLoginScreen] = useState(false);
+  const [isLoginScreen] = useState(true)
   const styles = {
     contentDiv: {
       display: "flex",
     },
     contentMargin: {
-      marginLeft: "5px",
-      width: "100%",
-    },
-    contentMargin1: {
-      marginLeft: "5px",
+      marginLeft: "10px",
       width: "100%",
     },
   };
   return (
     <>
+      {
+        isLoginScreen ? 
+          <Row>
+            <Col>
+              <Header />
+            </Col>
+          </Row>
+          :
+          null
+      }
+
       <div style={styles.contentDiv}>
+        { isLoginScreen ? <SideNavigation/> : null}
         <div style={styles.contentMargin}>
           <Router>
             <Switch>
-              <Route exact path="/" component={Login} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/forgot-password" component={Forgot}></Route>
-              <div style={styles.contentMargin1}>
-                <Header />
-                <SideNavigation />
-                <Route  path="/register" component={Register}></Route>
-                <Route  path="/pabrik" component={Factory}></Route>
-                <Route  path="/dataPabrik" component={FactoryData}></Route>
-              </div>
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/forgot-password" component={Forgot} />
+              <Route path="/pabrik" component={Factory} />
+              <Route path="/dataIndustry" component={DataIndustry} />
+              <Route path="/dailyReport" component={DailyReport} />
+              <Route path="/inputDailyReport" component={InputDailyReport} />
+              <Route path="/" component={Login} />
             </Switch>
           </Router>
         </div>

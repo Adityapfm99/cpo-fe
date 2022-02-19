@@ -1,0 +1,21 @@
+
+$theme-color-primary: #0DA85E;
+$theme-color-text: #000000;
+
+$theme-text-color-primary: $theme-color-text;
+$theme-text-color-secondary: lighten($theme-text-color-primary, 20%);
+$theme-success-color: #5cb377;
+$theme-warning-color: #eebf41;
+$theme-info-color: #5b99ea;
+$theme-danger-color: #ec575b;
+
+//override bootstrap
+$theme-colors: (
+  "primary": $theme-color-primary,
+  "secondary": $theme-text-color-secondary,
+  "success": $theme-success-color,
+  "danger": $theme-danger-color,
+  "wide": $theme-color-primary,
+  "warning": $theme-warning-color,
+  "info": $theme-info-color,
+);

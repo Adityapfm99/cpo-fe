@@ -1,17 +1,19 @@
 
 $theme-color-primary: #0DA85E;
+$theme-color-primary-button: #2C98F0;
 $theme-color-text: #000000;
 
 $theme-text-color-primary: $theme-color-text;
 $theme-text-color-secondary: lighten($theme-text-color-primary, 20%);
 $theme-success-color: #5cb377;
-$theme-warning-color: #eebf41;
-$theme-info-color: #5b99ea;
+$theme-warning-color: #F0A22C;
+$theme-info-color: #4ACACA;
 $theme-danger-color: #ec575b;
 
 //override bootstrap
 $theme-colors: (
   "primary": $theme-color-primary,
+  "primary-button" : $theme-color-primary-button,
   "secondary": $theme-text-color-secondary,
   "success": $theme-success-color,
   "danger": $theme-danger-color,
