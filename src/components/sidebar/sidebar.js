@@ -40,9 +40,10 @@ const SideNavigation = () => {
         <MenuItem icon={<FaKey />}>Change Password</MenuItem>
         <MenuItem icon={<FaEmpire />}>Factory</MenuItem>
         <SubMenu title="Reports" icon={<FaHeart />}>
-          <MenuItem>Daily Report</MenuItem>
-          <MenuItem>Weekly Report</MenuItem>
-          <MenuItem>Monthly Report</MenuItem>
+          <MenuItem>Dashboard Report</MenuItem>
+          <MenuItem>Production Group Report</MenuItem>
+          <MenuItem>PT Group Report</MenuItem>
+          <MenuItem>Factory Group Report</MenuItem>
         </SubMenu>
       </Menu>
     </ProSidebar>
