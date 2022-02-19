@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Form from "../../utilities/Forms";
 
-const Register = () => {
+
+const Pabrik = () => {
   const [grup, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -247,4 +248,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Pabrik;

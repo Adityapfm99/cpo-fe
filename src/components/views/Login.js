@@ -5,7 +5,7 @@ import Form from "../../utilities/Forms";
 import image from '../../assets/logo1.png';
 
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [validate, setValidate] = useState({});
@@ -13,40 +13,42 @@ const Login = () => {
 
   const validateLogin = () => {
     let isValid = true;
-
     let validator = Form.validator({
       email: {
         value: email,
-        isRequired: true,
-        isEmail: true,
+        isRequired: false,
+        isEmail: false,
       },
       password: {
         value: password,
         isRequired: true,
-        minLength: 6,
+        minLength: 2,
       },
     });
-
+    console.log('validatorvalidator',validator)
     if (validator !== null) {
       setValidate({
         validate: validator.errors,
       });
 
-      isValid = false;
+      isValid = true;
     }
     return isValid;
   };
+  const handleLogin = () => {
+    props.history.push('/register');
+    setShowPassword(false);
+  }
 
   const authenticate = (e) => {
     e.preventDefault();
+    handleLogin();
 
     const validate = validateLogin();
-
     if (validate) {
       setValidate({});
-      setEmail("");
-      setPassword("");
-      alert("Successfully Login");
+    setEmail("");
+    setPassword("");
     }
   };
 
@@ -75,7 +77,7 @@ const Login = () => {
               >
                 <div className="email mb-3">
                   <input
-                    type="email"
+                    type="text"
                     className={`form-control ${
                       validate.validate && validate.validate.email
                         ? "is-invalid "
@@ -187,6 +189,7 @@ const Login = () => {
       </div>
     </div>
   );
+
 };
 
 export default Login;
