@@ -25,7 +25,6 @@ const Login = (props) => {
         minLength: 2,
       },
     });
-    console.log('validatorvalidator',validator)
     if (validator !== null) {
       setValidate({
         validate: validator.errors,
@@ -36,7 +35,7 @@ const Login = (props) => {
     return isValid;
   };
   const handleLogin = () => {
-    props.history.push('/register');
+    props.history.push('/dataPabrik');
     setShowPassword(false);
   }
 
@@ -62,8 +61,6 @@ const Login = (props) => {
 
   return (
     <div className="row g-0 auth-wrapper">
-
-      
       <div className="col-12 col-md-7 col-lg-6 auth-main-col text-center">
         <div className="d-flex flex-column align-content-end">
           <div className="auth-body mx-auto">
@@ -147,16 +144,6 @@ const Login = (props) => {
                   <div className="extra mt-3 row justify-content-between">
                     <div className="col-6">
                       <div className="form-check">
-                        {/* <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="remember"
-                          checked={remember}
-                          onChange={(e) => setRemember(e.currentTarget.checked)}
-                        /> */}
-                        {/* <label className="form-check-label" htmlFor="remember">
-                          Remember me
-                        </label> */}
                       </div>
                     </div>
                     <div className="col-6">
