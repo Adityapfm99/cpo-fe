@@ -73,7 +73,7 @@ const Register = () => {
       <div className="col-12 col-md-7 col-lg-6 auth-main-col text-center">
         <div className="d-flex flex-column align-content-end">
           <div className="auth-body mx-auto">
-            <h1>Buat akun</h1>
+            <h1>Create Account</h1>
             <div className="auth-form-container text-start">
               <form
                 className="auth-form"
@@ -233,7 +233,7 @@ const Register = () => {
 
               <hr />
               <div className="auth-option text-center pt-2">
-                Punya Akun?{" "}
+                Have account?{" "}
                 <Link className="text-link" to="/login">
                   Sign in
                 </Link>

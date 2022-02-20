@@ -11,22 +11,29 @@ import SideNavigation from "../src/components/sidebar/sidebar";
 import { Col, Row } from "reactstrap";
 import DailyReport from "./components/views/dailyReport";
 import InputDailyReport from "./components/views/inputDailyReport";
+import Dashboard from "./components/views/dashboard";
+import { useHistory } from "react-router-dom";
 
 function App() {
-  const [isLoginScreen] = useState(true)
+  const history = useHistory();
+  const page = history.location.pathname
+  const marginLeft = page !== '/login' && page !== '/' ? "20%" : "auto";
+  const marginTop = page !== '/login' && page !== '/' ? "5%" : "auto";
+  console.log(page !== '/login', "page");
   const styles = {
     contentDiv: {
       display: "flex",
     },
     contentMargin: {
-      marginLeft: "10px",
+      marginLeft,
+      marginTop,
       width: "100%",
     },
   };
   return (
     <>
       {
-        isLoginScreen ? 
+        page !== "/login" && page !== "/" ? 
           <Row>
             <Col>
               <Header />
@@ -37,20 +44,19 @@ function App() {
       }
 
       <div style={styles.contentDiv}>
-        { isLoginScreen ? <SideNavigation/> : null}
+        {page !== "/login" && page !== "/" ? <SideNavigation/> : null}
         <div style={styles.contentMargin}>
-          <Router>
             <Switch>
+              <Route path="/dashboard" component={Dashboard} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
-              <Route path="/forgot-password" component={Forgot} />
+              <Route path="/forgot" component={Forgot} />
               <Route path="/pabrik" component={Factory} />
               <Route path="/dataIndustry" component={DataIndustry} />
               <Route path="/dailyReport" component={DailyReport} />
               <Route path="/inputDailyReport" component={InputDailyReport} />
               <Route path="/" component={Login} />
             </Switch>
-          </Router>
         </div>
       </div>
     </>

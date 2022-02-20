@@ -1,16 +1,17 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import { Input, Button } from 'reactstrap';
 import TableDataIndustry from '../../utilities/tableDataIndustry';
 
 
 const DataIndustry = () => {
-
+const history = useHistory()
     return (
         <>
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h1 style={{ marginTop: "2rem"  }}>Data Pabrik</h1>
+                        <h1 style={{ marginTop: "2rem"  }}>Factory Data</h1>
                     </div>
                 </div>
                 <div className="row" style={{ display: "flex", flexDirection: "row", justifyConten: "space-evenly" }}>
@@ -24,8 +25,8 @@ const DataIndustry = () => {
                         </div>
                     </div>
                     <div className="col">
-                        <Button color="primary-button" style={{ color: "white" }}>
-                            <span style={{ margin: "10px" }}>Tambah Pabrik</span> 
+                        <Button color="primary-button" onClick={() => history.push('/pabrik')} style={{ color: "white" }}>
+                            <span style={{ margin: "10px" }}>Add Factory</span> 
                             <svg width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11 4H0V6H11V4ZM11 0H0V2H11V0ZM15 8V4H13V8H9V10H13V14H15V10H19V8H15ZM0 10H7V8H0V10Z" fill="white" />
                             </svg>

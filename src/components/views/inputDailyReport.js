@@ -87,8 +87,8 @@ const InputDailyReport = () => {
                             </div>
                             <div className="col">
                                 <Input
-                                    id="exampleDate"
-                                    name="date"
+                                    id="exportCPO"
+                                    name="cpo"
                                     placeholder="CPO"
                                     type="text"
                                 />
@@ -100,7 +100,7 @@ const InputDailyReport = () => {
                     <div className="col-6">
                         <div className="row">
                             <div className="col-2">
-                                <Label for="exampleDate">
+                                <Label for="pulau">
                                     Pulau
                                 </Label>
                             </div>

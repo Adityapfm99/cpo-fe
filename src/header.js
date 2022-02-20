@@ -12,8 +12,8 @@ import {
 const Header = () => {
   return (
     <div>
-      <Navbar color="wide" light expand="md">
-        <NavbarBrand href="/">Welcome, Admin</NavbarBrand>
+      <Navbar color="wide" light expand="md" fixed="top">
+        <NavbarBrand href="/">CPO Monitoring</NavbarBrand>
         <Nav className="mr-auto" navbar>
           {/* <NavItem>
             <NavLink href="/components/">Components</NavLink>

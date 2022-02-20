@@ -35,7 +35,7 @@ const Login = (props) => {
     return isValid;
   };
   const handleLogin = () => {
-    props.history.push('/dataPabrik');
+    props.history.push('/dashboard/');
     setShowPassword(false);
   }
 
