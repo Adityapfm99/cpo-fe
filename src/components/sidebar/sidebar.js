@@ -42,14 +42,14 @@ const SideNavigation = () => {
       <Menu iconShape="square">
         <MenuItem onClick={() => history.push('/dashboard')} icon={<FaChartPie />}> Dashboard</MenuItem>
         <SubMenu title="Account" icon={<FaUserAlt />}>
-          <MenuItem onClick={() => history.push('/register')}icon={<FaKey />}>Create Account</MenuItem>
-          <MenuItem onClick={() => history.push('/forgot')}icon={<FaLock />}>Change Password</MenuItem>
+            <MenuItem onClick={() => history.push('/register')}icon={<FaKey />}>Create Account</MenuItem>
+            <MenuItem onClick={() => history.push('/forgot')}icon={<FaLock />}>Change Password</MenuItem>
         </SubMenu>
         <MenuItem onClick={() => history.push('/dataIndustry')} icon={<FaIndustry />}>Factory</MenuItem>
         <SubMenu title="Reports" icon={<FaLaptopCode />}>
-        <MenuItem onClick={() => history.push('/productionGroup')} icon={<FaFile />}>Group Production Report</MenuItem>
-        <MenuItem onClick={() => history.push('/productionPT')} icon={<FaFile />}>PT Production Report</MenuItem>
-        <MenuItem onClick={() => history.push('/productionIndustry')} icon={<FaFile />}>Industry Production Report</MenuItem>
+            <MenuItem onClick={() => history.push('/productionGroup')} icon={<FaFile />}>Group Production Report</MenuItem>
+            <MenuItem onClick={() => history.push('/productionPT')} icon={<FaFile />}>PT Production Report</MenuItem>
+            <MenuItem onClick={() => history.push('/productionIndustry')} icon={<FaFile />}>Industry Production Report</MenuItem>
         </SubMenu>
       </Menu>
     </ProSidebar>

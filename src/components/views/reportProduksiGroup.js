@@ -20,7 +20,7 @@ const ProductionGroupReport = () => {
           justifyConten: "space-evenly",
         }}
       >
-        <div className="col-6">
+        <div className="col-0">
           <FormGroup>
             <div className="row">
               <div className="col-2">
@@ -35,18 +35,6 @@ const ProductionGroupReport = () => {
                 />
               </div>
               <br></br>
-              {/* <div className="col">
-                                <span style={{ marginLeft: "20" }}>Tahun</span>
-                            </div>
-                            <div className="col">
-                                <Input
-                                    id="tahun"
-                                    name="tahun"
-                                    placeholder="tahun placeholder"
-                                    type="number"
-                                    min="2020" max="2050" step="1" value="2020" 
-                                />
-                            </div> */}
               <div className="col-2">
                 <Label for="data">Data</Label>
               </div>
@@ -58,12 +46,23 @@ const ProductionGroupReport = () => {
                   <option>Export CPO</option>
                 </Input>
               </div>
+              <div className="col-2">
+                <Label for="group">Group</Label>
+              </div>  
+              <div className="col">
+                <Input name="group" type="select">
+                  <option>All</option>
+                  <option>Group CPO</option>
+                  <option>Group TBS</option>
+                </Input>
+              </div>
             </div>
+            
           </FormGroup>
         </div>
 
         <div
-          className="col-6"
+          className="col-16"
           style={{
             display: "flex",
             justifyContent: "flex-end",

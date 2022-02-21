@@ -3,7 +3,11 @@ import { useHistory } from "react-router-dom";
 import { Input, Button } from 'reactstrap';
 import TableDataIndustry from '../../utilities/tableDataIndustry';
 
-
+const browseFiles = () => {
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.click();
+  }
 const DataIndustry = () => {
 const history = useHistory()
     return (
@@ -33,7 +37,7 @@ const history = useHistory()
                         </Button>
                     </div>
                     <div className="col">
-                        <Button color="info" style={{ color: "white" }} >
+                        <Button color="info" onClick={browseFiles}  style={{ color: "white" }} >
                             <span style={{ margin: "10px" }}>Upload CSV</span>
                             <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10 0H2C0.9 0 0.0100002 0.9 0.0100002 2L0 18C0 19.1 0.89 20 1.99 20H14C15.1 20 16 19.1 16 18V6L10 0ZM12 14H9V17H7V14H4V12H7V9H9V12H12V14ZM9 7V1.5L14.5 7H9Z" fill="white" />
