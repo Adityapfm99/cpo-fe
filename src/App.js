@@ -21,7 +21,7 @@ function App() {
   let marginTop = page !== '/login' && page !== '/' ? "5%" : "auto";
   // console.log(page !== '/login', "page");
   if (page ==='/register' || page ==='/forgot') {
-    marginLeft = '20%'
+    marginLeft = '10%'
     marginTop = '0%'
   }
   const styles = {
