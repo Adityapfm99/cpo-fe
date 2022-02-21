@@ -231,13 +231,13 @@ const Register = () => {
                 </div>
               </form>
 
-              <hr />
+              {/* <hr />
               <div className="auth-option text-center pt-2">
                 Have account?{" "}
                 <Link className="text-link" to="/login">
                   Sign in
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

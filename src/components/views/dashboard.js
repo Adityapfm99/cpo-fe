@@ -36,11 +36,11 @@ const Dashboard = () => {
                         <ChartReportCpoPerpulau />
                     </div>
                 </div>
-                <div className="row" style={{ marginTop: "3em" }}>
+                {/* <div className="row" style={{ marginTop: "3em" }}>
                     <div className="col-12">
                         <TableReportPerGroup />
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     )

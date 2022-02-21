@@ -17,9 +17,13 @@ import { useHistory } from "react-router-dom";
 function App() {
   const history = useHistory();
   const page = history.location.pathname
-  const marginLeft = page !== '/login' && page !== '/' ? "20%" : "auto";
-  const marginTop = page !== '/login' && page !== '/' ? "5%" : "auto";
-  console.log(page !== '/login', "page");
+  let marginLeft = page !== '/login' && page !== '/' ? "10%" : "auto";
+  let marginTop = page !== '/login' && page !== '/' ? "5%" : "auto";
+  // console.log(page !== '/login', "page");
+  if (page ==='/register' || page ==='/forgot') {
+    marginLeft = '20%'
+    marginTop = '0%'
+  }
   const styles = {
     contentDiv: {
       display: "flex",
@@ -29,6 +33,7 @@ function App() {
       marginTop,
       width: "100%",
     },
+   
   };
   return (
     <>
@@ -45,6 +50,7 @@ function App() {
 
       <div style={styles.contentDiv}>
         {page !== "/login" && page !== "/" ? <SideNavigation/> : null}
+
         <div style={styles.contentMargin}>
             <Switch>
               <Route path="/dashboard" component={Dashboard} />
@@ -58,6 +64,8 @@ function App() {
               <Route path="/" component={Login} />
             </Switch>
         </div>
+
+        
       </div>
     </>
   );
