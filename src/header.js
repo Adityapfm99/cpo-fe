@@ -1,12 +1,14 @@
 import React from "react";
+
+import { FaKey, FaSignOutAlt } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
 import {
   Nav,
   Navbar,
   NavbarBrand,
   NavbarText,
-//   NavItem,
-//   NavLink,
+  NavItem,
+  NavLink,
 } from "reactstrap";
 
 const Header = () => {
@@ -15,20 +17,19 @@ const Header = () => {
       <Navbar color="wide" light expand="md" fixed="top">
         <NavbarBrand href="/">CPO Monitoring</NavbarBrand>
         <Nav className="mr-auto" navbar>
-          {/* <NavItem>
-            <NavLink href="/components/">Components</NavLink>
-          </NavItem>
           <NavItem>
+          <NavLink  href="/"> {<FaSignOutAlt />} SignOut</NavLink>
+          </NavItem>
+          {/* <NavItem>
             <NavLink href="https://github.com/reactstrap/reactstrap">
               GitHub
             </NavLink>
           </NavItem> */}
         </Nav>
-        <NavbarText>
-          <div>
-            <AiOutlineUser></AiOutlineUser>
-          </div>
-        </NavbarText>
+        {/* <NavbarText>
+        <NavLink  href="/"> {<FaSignOutAlt />} Logout</NavLink>
+        {/* <MenuItem onClick={() => history.push('/dataIndustry')} icon={<FaIndustry />}>Factory</MenuItem> */}
+        {/* </NavbarText> */}
       </Navbar>
     </div>
   );

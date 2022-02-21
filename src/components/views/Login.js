@@ -35,7 +35,7 @@ const Login = (props) => {
     return isValid;
   };
   const handleLogin = () => {
-    props.history.push('/dashboard/');
+    props.history.push('/dashboard');
     setShowPassword(false);
   }
 
@@ -70,6 +70,7 @@ const Login = (props) => {
                 className="auth-form"
                 method="POST"
                 onSubmit={authenticate}
+                // onClick={() => props.history.push('/dashboard')} 
                 autoComplete={"off"}
               >
                 <div className="email mb-3">
@@ -148,7 +149,7 @@ const Login = (props) => {
                     </div>
                     <div className="col-6">
                       <div className="forgot-password text-end">
-                        <Link to="/forgot-password">Lupa password?</Link>
+                        <Link to="/forgot-password">Forgot Password?</Link>
                       </div>
                     </div>
                   </div>
@@ -158,16 +159,16 @@ const Login = (props) => {
                     type="submit"
                     className="btn btn-primary w-100 theme-btn mx-auto"
                   >
-                    Masuk
+                    Sign in
                   </button>
                 </div>
               </form>
 
               <hr />
               <div className="auth-option text-center pt-2">
-                Belum Punya?{" "}
+              Don't have an account yet?{" "}
                 <Link className="text-link" to="/register">
-                  Buat akun{" "}
+                  Create Account{" "}
                 </Link>
               </div>
             </div>
