@@ -17,7 +17,7 @@ const SideNavigation = () => {
   const [collapsed, setCollapsed] = useState(false);
   // added styles 
   const history = useHistory()
-  console.log(history.location.pathname === "/dashboard");
+  // console.log(history.location.pathname === "/dashboard");
   // const height = history.location.pathname === "/dashboard" ? "auto" : "100vh"
   const styles = {
     sideBarHeight: {
@@ -47,9 +47,9 @@ const SideNavigation = () => {
         </SubMenu>
         <MenuItem onClick={() => history.push('/dataIndustry')} icon={<FaIndustry />}>Factory</MenuItem>
         <SubMenu title="Reports" icon={<FaLaptopCode />}>
-        <MenuItem icon={<FaFile />}> Group Production Report</MenuItem>
-          <MenuItem icon={<FaFile />}>PT Production Report</MenuItem>
-          <MenuItem icon={<FaFile />}>Factory Production Report</MenuItem>
+        <MenuItem onClick={() => history.push('/productionGroup')} icon={<FaFile />}>Group Production Report</MenuItem>
+        <MenuItem onClick={() => history.push('/productionPT')} icon={<FaFile />}>PT Production Report</MenuItem>
+        <MenuItem onClick={() => history.push('/productionIndustry')} icon={<FaFile />}>Industry Production Report</MenuItem>
         </SubMenu>
       </Menu>
     </ProSidebar>

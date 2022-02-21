@@ -10,6 +10,9 @@ import Header from "../src/header";
 import SideNavigation from "../src/components/sidebar/sidebar";
 import { Col, Row } from "reactstrap";
 import DailyReport from "./components/views/dailyReport";
+import ProductionGroupReport from "./components/views/reportProduksiGroup";
+import PTGroupReport from "./components/views/reportProduksiPT";
+import IndustryGroupReport from "./components/views/reportProduksiIndustry";
 import InputDailyReport from "./components/views/inputDailyReport";
 import Dashboard from "./components/views/dashboard";
 import { useHistory } from "react-router-dom";
@@ -60,6 +63,9 @@ function App() {
               <Route path="/pabrik" component={Factory} />
               <Route path="/dataIndustry" component={DataIndustry} />
               <Route path="/dailyReport" component={DailyReport} />
+              <Route path="/productionGroup" component={ProductionGroupReport} />
+              <Route path="/productionIndustry" component={IndustryGroupReport} />
+              <Route path="/productionPT" component={PTGroupReport} />
               <Route path="/inputDailyReport" component={InputDailyReport} />
               <Route path="/" component={Login} />
             </Switch>
