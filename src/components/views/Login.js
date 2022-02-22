@@ -6,6 +6,7 @@ import image from '../../assets/logo1.png';
 
 
 const Login = (props) => {
+  console.log(props)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [validate, setValidate] = useState({});
@@ -36,6 +37,10 @@ const Login = (props) => {
   };
   const handleLogin = () => {
     props.history.push('/dashboard');
+    props.setIsLogin(true);
+    props.setMargin({
+      marginLeft: "10%", marginTop: "5%"
+    })
     setShowPassword(false);
   }
 

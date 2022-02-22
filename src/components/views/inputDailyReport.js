@@ -58,25 +58,7 @@ const InputDailyReport = () => {
                         </div>
                     </div>
                 </div>
-                <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
-                    <div className="col-6">
-                        <div className="row">
-                            <div className="col-2">
-                                <Label for="exampleDate">
-                                    Export TBS
-                                </Label>
-                            </div>
-                            <div className="col">
-                                <Input
-                                    id="exampleDate"
-                                    name="date"
-                                    placeholder="TBS"
-                                    type="text"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        
                 <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
                     <div className="col-6">
                         <div className="row">

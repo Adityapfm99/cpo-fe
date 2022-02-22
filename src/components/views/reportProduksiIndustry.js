@@ -7,7 +7,7 @@ const IndustryGroupReport = () => {
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h1 style={{ marginTop: "2rem" }}>Industry Production Report</h1>
+          <h1 style={{ marginTop: "2rem" }}>Factory Production Report</h1>
         </div>
       </div>
       <hr></hr>

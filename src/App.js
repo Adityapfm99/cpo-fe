@@ -20,20 +20,19 @@ import { useHistory } from "react-router-dom";
 function App() {
   const history = useHistory();
   const page = history.location.pathname
-  let marginLeft = page !== '/login' && page !== '/' ? "10%" : "auto";
-  let marginTop = page !== '/login' && page !== '/' ? "5%" : "auto";
-  // console.log(page !== '/login', "page");
-  if (page ==='/register' || page ==='/forgot') {
-    marginLeft = '10%'
-    marginTop = '0%'
-  }
+  const [isLogin, setIsLogin] = useState(false);
+
+  const [margin, setMargin] = useState({
+    marginLeft: "auto", marginTop: "auto"
+  })
+
   const styles = {
     contentDiv: {
       display: "flex",
     },
     contentMargin: {
-      marginLeft,
-      marginTop,
+      marginLeft: margin.marginLeft,
+      marginTop: margin.marginTop,
       width: "100%",
     },
    
@@ -41,7 +40,7 @@ function App() {
   return (
     <>
       {
-        page !== "/login" && page !== "/" ? 
+        isLogin ? 
           <Row>
             <Col>
               <Header />
@@ -52,12 +51,14 @@ function App() {
       }
 
       <div style={styles.contentDiv}>
-        {page !== "/login" && page !== "/" ? <SideNavigation/> : null}
+        {isLogin ? <SideNavigation/> : null}
 
         <div style={styles.contentMargin}>
             <Switch>
               <Route path="/dashboard" component={Dashboard} />
-              <Route path="/login" component={Login} />
+              <Route path="/login" >
+                <Login setIsLogin={setIsLogin} setMargin={setMargin} history={history} />
+              </Route>
               <Route path="/register" component={Register} />
               <Route path="/forgot" component={Forgot} />
               <Route path="/pabrik" component={Factory} />
@@ -67,7 +68,9 @@ function App() {
               <Route path="/productionIndustry" component={IndustryGroupReport} />
               <Route path="/productionPT" component={PTGroupReport} />
               <Route path="/inputDailyReport" component={InputDailyReport} />
-              <Route path="/" component={Login} />
+              <Route path="/" >
+                <Login setIsLogin={setIsLogin} setMargin={setMargin} history={history} />
+              </Route>
             </Switch>
         </div>
 

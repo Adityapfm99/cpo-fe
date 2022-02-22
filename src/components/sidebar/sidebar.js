@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { FaLaptopCode,FaKey,FaUserAlt,FaLock, FaFile, FaIndustry, FaChartPie } from "react-icons/fa";
+import { FaLaptopCode,FaKey,FaUserAlt,FaLock, FaFile, FaIndustry, FaChartPie, FaRegBuilding, FaBoxes, FaCalendarWeek } from "react-icons/fa";
 import {
   Menu,
   MenuItem,
@@ -46,10 +46,11 @@ const SideNavigation = () => {
             <MenuItem onClick={() => history.push('/forgot')}icon={<FaLock />}>Change Password</MenuItem>
         </SubMenu>
         <MenuItem onClick={() => history.push('/dataIndustry')} icon={<FaIndustry />}>Factory</MenuItem>
+        <MenuItem onClick={() => history.push('/InputDailyReport')} icon={<FaCalendarWeek />}>Submitted CPO Weekly</MenuItem>
         <SubMenu title="Reports" icon={<FaLaptopCode />}>
-            <MenuItem onClick={() => history.push('/productionGroup')} icon={<FaFile />}>Group Production Report</MenuItem>
-            <MenuItem onClick={() => history.push('/productionPT')} icon={<FaFile />}>PT Production Report</MenuItem>
-            <MenuItem onClick={() => history.push('/productionIndustry')} icon={<FaFile />}>Industry Production Report</MenuItem>
+            <MenuItem onClick={() => history.push('/productionGroup')} icon={<FaBoxes />}>Group Production Report</MenuItem>
+            <MenuItem onClick={() => history.push('/productionPT')} icon={<FaRegBuilding />}>PT Production Report</MenuItem>
+            <MenuItem onClick={() => history.push('/productionIndustry')} icon={<FaIndustry />}>Factory Production Report</MenuItem>
         </SubMenu>
       </Menu>
     </ProSidebar>
