@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "node --max_old_space_size=4192 node_modules/.bin/react-scripts start --progress --env.prod",
+    "build": "node --max_old_space_size=4192 node_modules/.bin/react-scripts --openssl-legacy-provider start --progress --env.dev",
     "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
     
   },
