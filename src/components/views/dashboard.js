@@ -35,6 +35,19 @@ const Dashboard = () => {
                 </Input>
               </div>
               
+              <div className="col-1">
+                <Label for="method">Method</Label>
+              </div>
+              <div className="col-2">
+                <Input name="tahun" type="select">
+                  <option>Linear</option>
+                  <option>Moving Average</option>
+                  <option>Logarithmic</option>
+                  <option>Exponential</option>
+       
+                </Input>
+              </div>
+              
             </div>
           </FormGroup>
         </div>
