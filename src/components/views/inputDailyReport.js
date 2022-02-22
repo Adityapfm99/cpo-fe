@@ -6,7 +6,7 @@ const InputDailyReport = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h1 style={{ marginTop: "2rem", marginLeft: "10px" }}>Input Daily Report</h1>
+                        <h1 style={{ marginTop: "2rem", marginLeft: "10px" }}>Input CPO Weekly</h1>
                     </div>
                 </div>
                 <div className="row" style={{ marginTop: "3rem", marginLeft: "10px" }}>
@@ -58,7 +58,25 @@ const InputDailyReport = () => {
                         </div>
                     </div>
                 </div>
-        
+                <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
+                    <div className="col-6">
+                        <div className="row">
+                            <div className="col-2">
+                                <Label for="exampleDate">
+                                    Export TBS
+                                </Label>
+                            </div>
+                            <div className="col">
+                                <Input
+                                    id="exampleDate"
+                                    name="date"
+                                    placeholder="TBS"
+                                    type="text"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
                     <div className="col-6">
                         <div className="row">
