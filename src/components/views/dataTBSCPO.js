@@ -1,13 +1,16 @@
-import React from "react";
-import { Input, Button, FormGroup, Label } from "reactstrap";
-import TableProductionIndustry from "../../utilities/tableProductionIndustry";
+import React from 'react';
+import { useHistory } from "react-router-dom";
+import { Input, Button,FormGroup, Label} from 'reactstrap';
+import TableDataTbsCpo from '../../utilities/tableDataTBSCPO';
 
-const IndustryGroupReport = () => {
-  return (
+
+const DataTBSCPO = () => {
+const history = useHistory()
+return (
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h1 style={{ marginTop: "2rem" }}>Factory Production Report</h1>
+          <h1 style={{ marginTop: "2rem" }}>TBS & CPO Report</h1>
         </div>
       </div>
       <hr></hr>
@@ -24,39 +27,31 @@ const IndustryGroupReport = () => {
           <FormGroup>
             <div className="row">
               <div className="col-2">
-                <Label for="bulan">Bulan & Tahun</Label>
+                <Label for="bulan">Periode</Label>
               </div>
               <div className="col">
                 <Input
                   id="month"
                   name="bulan"
                   placeholder="Bulan placeholder"
-                  type="month"
+                  type="date"
                 />
               </div>
               <br></br>
               <div className="col-2">
-                <Label for="data">Data</Label>
+                <Label for="data">S/d</Label>
               </div>
               <div className="col">
-                <Input name="data" type="select">
-                  <option>All</option>
-                  <option>Produksi CPO</option>
-                  <option>Produksi TBS</option>
-                  <option>Export CPO</option>
-                </Input>
+              <Input
+                  id="month"
+                  name="bulan"
+                  placeholder="Bulan placeholder"
+                  type="date"
+                />
               </div>
-              <div className="col-2">
-                <Label for="group">Group</Label>
-              </div>  
-              <div className="col">
-                <Input name="group" type="select">
-                  <option>All</option>
-                  <option>Group CPO</option>
-                  <option>Group TBS</option>
-                </Input>
-              </div>
+          
             </div>
+            
           </FormGroup>
         </div>
 
@@ -68,8 +63,8 @@ const IndustryGroupReport = () => {
             alignItems: "center",
           }}
         >
-          <Button style={{ marginLeft: "10px" }} color="warning">
-            <span style={{ color: "white", marginRight: "10px" }}>Export</span>
+          <Button style={{ marginLeft: "10px" }} onClick={() => history.push('/inputDailyReport')} color="warning">
+            <span style={{ color: "white", marginRight: "10px" }}>Add Data</span>
             <svg
               width="27"
               height="18"
@@ -100,12 +95,12 @@ const IndustryGroupReport = () => {
           </Button>
         </div>
       </div>
-      
-      <div className="row" style={{ margin: "auto", marginTop: "5rem" }}>
-        <TableProductionIndustry />
-      </div>
-    </div>
-  );
-};
+                <div className="row" style={{ margin: "auto", marginTop: "5rem"  }}>
+                    <TableDataTbsCpo/>
+                </div>
+            </div>
+       
+    )
+}
 
-export default IndustryGroupReport;
+export default DataTBSCPO

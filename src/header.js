@@ -1,7 +1,7 @@
 import React from "react";
 
-import { FaKey, FaSignOutAlt } from "react-icons/fa";
-import { AiOutlineUser } from "react-icons/ai";
+import {  FaSignOutAlt } from "react-icons/fa";
+// import { AiOutlineUser } from "react-icons/ai";
 import {
   Nav,
   Navbar,

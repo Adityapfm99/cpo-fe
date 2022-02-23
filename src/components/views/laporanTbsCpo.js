@@ -1,13 +1,21 @@
-import React from "react";
-import { Input, Button, FormGroup, Label } from "reactstrap";
-import TableProductionIndustry from "../../utilities/tableProductionIndustry";
+import React from 'react';
+import { useHistory } from "react-router-dom";
+import { Input, Button,FormGroup, Label} from 'reactstrap';
+import TableLaporanTbsCpo from '../../utilities/tableLaporanTbsCpo';
 
-const IndustryGroupReport = () => {
-  return (
+const browseFiles = () => {
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.click();
+  }
+
+const LaporanTbsCpo = () => {
+const history = useHistory()
+return (
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <h1 style={{ marginTop: "2rem" }}>Factory Production Report</h1>
+          <h1 style={{ marginTop: "2rem" }}>Laporan TBS & CPO</h1>
         </div>
       </div>
       <hr></hr>
@@ -24,39 +32,31 @@ const IndustryGroupReport = () => {
           <FormGroup>
             <div className="row">
               <div className="col-2">
-                <Label for="bulan">Bulan & Tahun</Label>
+                <Label for="bulan">Periode</Label>
               </div>
               <div className="col">
                 <Input
                   id="month"
                   name="bulan"
                   placeholder="Bulan placeholder"
-                  type="month"
+                  type="date"
                 />
               </div>
               <br></br>
               <div className="col-2">
-                <Label for="data">Data</Label>
+                <Label for="data">S/d</Label>
               </div>
               <div className="col">
-                <Input name="data" type="select">
-                  <option>All</option>
-                  <option>Produksi CPO</option>
-                  <option>Produksi TBS</option>
-                  <option>Export CPO</option>
-                </Input>
+              <Input
+                  id="month"
+                  name="bulan"
+                  placeholder="Bulan placeholder"
+                  type="date"
+                />
               </div>
-              <div className="col-2">
-                <Label for="group">Group</Label>
-              </div>  
-              <div className="col">
-                <Input name="group" type="select">
-                  <option>All</option>
-                  <option>Group CPO</option>
-                  <option>Group TBS</option>
-                </Input>
-              </div>
+          
             </div>
+            
           </FormGroup>
         </div>
 
@@ -68,8 +68,8 @@ const IndustryGroupReport = () => {
             alignItems: "center",
           }}
         >
-          <Button style={{ marginLeft: "10px" }} color="warning">
-            <span style={{ color: "white", marginRight: "10px" }}>Export</span>
+          <Button style={{ marginLeft: "10px" }} onClick={() => history.push('/inputTbsCpo')} color="warning">
+            <span style={{ color: "white", marginRight: "10px" }}>Add Data</span>
             <svg
               width="27"
               height="18"
@@ -83,6 +83,13 @@ const IndustryGroupReport = () => {
               />
             </svg>
           </Button>
+          <li> </li>
+          <Button color="info" onClick={browseFiles}  style={{ color: "white" }} >
+          <span style={{ color: "white", marginRight: "10px" }}>Upload CSV</span>
+                            <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 0H2C0.9 0 0.0100002 0.9 0.0100002 2L0 18C0 19.1 0.89 20 1.99 20H14C15.1 20 16 19.1 16 18V6L10 0ZM12 14H9V17H7V14H4V12H7V9H9V12H12V14ZM9 7V1.5L14.5 7H9Z" fill="white" />
+                            </svg>
+                        </Button>
           <Button style={{ marginLeft: "10px" }} color="primary-button">
             <span style={{ color: "white", marginRight: "10px" }}>Search</span>
             <svg
@@ -100,12 +107,12 @@ const IndustryGroupReport = () => {
           </Button>
         </div>
       </div>
-      
-      <div className="row" style={{ margin: "auto", marginTop: "5rem" }}>
-        <TableProductionIndustry />
-      </div>
-    </div>
-  );
-};
+                <div className="row" style={{ margin: "auto", marginTop: "5rem"  }}>
+                    <TableLaporanTbsCpo/>
+                </div>
+            </div>
+       
+    )
+}
 
-export default IndustryGroupReport;
+export default LaporanTbsCpo

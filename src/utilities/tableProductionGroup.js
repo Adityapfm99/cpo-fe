@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaFilePdf, FaEye } from "react-icons/fa";
 import { Table } from 'reactstrap'
 
 const TableProductionGroup = () => {
@@ -21,6 +22,15 @@ const TableProductionGroup = () => {
                     <th>
                         Export CPO
                     </th>
+                    <th>
+                        Dokumen Export
+                    </th>
+                    <th>
+                        Dokumen Refinery
+                    </th>
+                    <th>
+                        Detail
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +50,15 @@ const TableProductionGroup = () => {
                     <td>
                         2.010
                     </td>
+                    <td align='center'>
+                        {<FaFilePdf/>}
+                        </td>
+                        <td align='center'>
+                        {<FaFilePdf/>}
+                        </td>
+                        <td align='center'>
+                            {<FaEye/>}
+                        </td>
                 </tr>
                 <tr>
                     <th scope="row">
@@ -57,6 +76,15 @@ const TableProductionGroup = () => {
                     <td>
                         3.310
                     </td>
+                    <td align='center'>
+                        {<FaFilePdf/>}
+                        </td>
+                        <td align='center'>
+                        {<FaFilePdf/>}
+                        </td>
+                        <td align='center'>
+                            {<FaEye/>}
+                        </td>
                 </tr>
                 <tr>
                     <th scope="row">
@@ -74,6 +102,15 @@ const TableProductionGroup = () => {
                     <td>
                         2.100
                     </td>
+                    <td align='center'>
+                        {<FaFilePdf/>}
+                        </td>
+                        <td align='center'>
+                        {<FaFilePdf/>}
+                        </td>
+                        <td align='center'>
+                            {<FaEye/>}
+                        </td>
                 </tr>
             </tbody>
         </Table>

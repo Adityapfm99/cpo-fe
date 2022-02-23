@@ -1,16 +1,19 @@
 import React from 'react'
+
+import { useHistory } from "react-router-dom";
 import { Input, Label } from 'reactstrap';
-const InputDailyReport = () => {
+const InputDmo = () => {
+    const history = useHistory()
     return (
         <>
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <h1 style={{ marginTop: "2rem", marginLeft: "10px" }}>Input CPO Weekly</h1>
+                        <h1 style={{ marginTop: "2rem", marginLeft: "10px" }}>Data DMO</h1>
                     </div>
                 </div>
                 <div className="row" style={{ marginTop: "3rem", marginLeft: "10px" }}>
-                    <div className="col-6">
+                    <div className="col-8">
                         <div className="row">
                             <div className="col-2">
                                 <Label for="exampleDate">
@@ -26,7 +29,7 @@ const InputDailyReport = () => {
                                 />
                             </div>
                             <div className="col">
-                                <span style={{ marginLeft: "20px" }}>s/d</span>
+                                <span style={{ marginLeft: "10px" }}>s/d</span>
                             </div>
                             <div className="col">
                                 <Input
@@ -40,13 +43,14 @@ const InputDailyReport = () => {
                     </div>
                 </div>
                 <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
-                    <div className="col-6">
+                <div className="col-8">
                         <div className="row">
                             <div className="col-2">
                                 <Label for="exampleDate">
-                                    PT
+                                    Export CPO
                                 </Label>
                             </div>
+                           
                             <div className="col">
                                 <Input
                                     id="exampleDate"
@@ -58,31 +62,31 @@ const InputDailyReport = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
-                    <div className="col-6">
+                <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
+                <div className="col-8">
                         <div className="row">
                             <div className="col-2">
-                                <Label for="exampleDate">
-                                    Export TBS
+                                <Label for="pulau">
+                                    Domestic Market Obligation
                                 </Label>
                             </div>
                             <div className="col">
                                 <Input
-                                    id="exampleDate"
-                                    name="date"
-                                    placeholder="TBS"
+                                    name="dmo"
                                     type="text"
-                                />
+                                >
+                                   
+                                </Input>
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
-                    <div className="col-6">
+                    <div className="col-8">
                         <div className="row">
                             <div className="col-2">
                                 <Label for="exampleDate">
-                                    Export CPO
+                                    Upload Dokumen Export
                                 </Label>
                             </div>
                             <div className="col">
@@ -90,54 +94,62 @@ const InputDailyReport = () => {
                                     id="exportCPO"
                                     name="cpo"
                                     placeholder="CPO"
-                                    type="text"
+                                    type="file"
                                 />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
-                    <div className="col-6">
+                <div className="col-8">
                         <div className="row">
                             <div className="col-2">
-                                <Label for="pulau">
-                                    Pulau
+                                <Label for="exampleDate">
+                                    Upload Dokumen Refinery
                                 </Label>
                             </div>
                             <div className="col">
                                 <Input
-                                    name="pulau"
-                                    type="select"
-                                >
-                                    <option>
-                                        pilih salah satu
-                                    </option>
-                                    <option>
-                                        Sumatera
-                                    </option>
-                                    <option>
-                                        Kalimantan
-                                    </option>
-                                </Input>
+                                    id="exportCPO"
+                                    name="cpo"
+                                    placeholder="TBS"
+                                    type="file"
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="row" style={{ marginTop: "1rem", marginLeft: "10px" }}>
-                    <div className="col-6" style={{ display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
-                        <div className="text-center">
-                            <button
-                                type="submit"
-                                className="btn btn-primary w-100 text-white theme-btn mx-auto"
-                            >
-                                Save
-                            </button>
-                        </div>
-                    </div>
+                <div
+                className="col-8"
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <div className="text-center">
+                  <button
+                   style={{ background: "red" ,color:"white"}}
+                    type="submit"
+                    onClick={() => history.push('/summaryTbsCpo')}
+                    className="btn btn-primary w-100 theme-btn mx-auto"
+                  >
+                    Back
+                  </button>
                 </div>
+                <li>.</li>
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="btn btn-primary w-100 theme-btn mx-auto"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
             </div>
         </>
     )
 }
 
-export default InputDailyReport
+export default InputDmo

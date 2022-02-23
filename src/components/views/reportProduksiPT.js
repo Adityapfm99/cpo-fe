@@ -1,6 +1,6 @@
 import React from "react";
 import { Input, Button, FormGroup, Label } from "reactstrap";
-import TableProductionGroup from "../../utilities/tableProductionGroup";
+import TableProductionPT from "../../utilities/tableProductionPT";
 
 const PTGroupReport = () => {
   return (
@@ -102,7 +102,7 @@ const PTGroupReport = () => {
       </div>
       
       <div className="row" style={{ margin: "auto", marginTop: "5rem" }}>
-        <TableProductionGroup />
+        <TableProductionPT/>
       </div>
     </div>
   );

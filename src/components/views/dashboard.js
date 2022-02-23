@@ -39,7 +39,7 @@ const Dashboard = () => {
                 <Label for="method">Method</Label>
               </div>
               <div className="col-2">
-                <Input name="tahun" type="select">
+                <Input name="method" type="select">
                   <option>Linear</option>
                   <option>Moving Average</option>
                   <option>Logarithmic</option>

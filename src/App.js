@@ -14,8 +14,15 @@ import ProductionGroupReport from "./components/views/reportProduksiGroup";
 import PTGroupReport from "./components/views/reportProduksiPT";
 import IndustryGroupReport from "./components/views/reportProduksiIndustry";
 import InputDailyReport from "./components/views/inputDailyReport";
+import DataCPO from "./components/views/dataCPO";
 import Dashboard from "./components/views/dashboard";
 import { useHistory } from "react-router-dom";
+import DataTBSCPO from "./components/views/dataTBSCPO";
+import SummaryTBSCPO from "./components/views/sumaryTbsCpo";
+import InputTbsCpo from "./components/views/inputTbsCpo";
+import SummaryDmo from "./components/views/sumaryDmo";
+import InputDmo from "./components/views/inputDmo";
+import LaporanTbsCpo from "./components/views/laporanTbsCpo";
 
 function App() {
   const history = useHistory();
@@ -63,7 +70,14 @@ function App() {
               <Route path="/forgot" component={Forgot} />
               <Route path="/pabrik" component={Factory} />
               <Route path="/dataIndustry" component={DataIndustry} />
+              <Route path="/dataCpo" component={DataCPO} />
               <Route path="/dailyReport" component={DailyReport} />
+              <Route path="/dataTbsCpo" component={DataTBSCPO} />
+              <Route path="/inputTbsCpo" component={InputTbsCpo} />
+              <Route path="/summaryTbsCpo" component={SummaryTBSCPO} />
+              <Route path="/summaryDmo" component={SummaryDmo} />
+              <Route path="/laporanTbsCpo" component={LaporanTbsCpo} />
+              <Route path="/inputDmo" component={InputDmo} />
               <Route path="/productionGroup" component={ProductionGroupReport} />
               <Route path="/productionIndustry" component={IndustryGroupReport} />
               <Route path="/productionPT" component={PTGroupReport} />
